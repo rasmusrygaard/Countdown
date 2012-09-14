@@ -1,0 +1,19 @@
+%h1
+	Create a new countown:
+
+.countdown_form
+	%form{ action: '/countdown', method: :post}
+		%table
+			%tr
+				%td
+					%input{ type: 'text', name: 'hour', value: 'Hour', id: 'hour-field'}
+				%td
+					%input{ type: 'text', name: 'minute', value: 'Minute', id: 'minute-field'}
+				%td
+					%input{ type: 'text', name: 'day', value: 'Day', id: 'day-field'}
+				%td
+					%input{ type: 'text', name: 'month', value: 'Month', id: 'month-field'}
+				%td
+					%input{ type: 'text', name: 'year', value: 'Year', id: 'year-field'}
+
+		%input{ type: 'submit', value: 'Create'}
