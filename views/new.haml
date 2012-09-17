@@ -1,3 +1,6 @@
+%script{:type => "text/javascript",
+        :src  => "/NewCountdown.js"}
+
 %h1
 	Create a new countown:
 
@@ -15,5 +18,7 @@
 					%input{ type: 'text', name: 'month', value: 'Month', id: 'month-field'}
 				%td
 					%input{ type: 'text', name: 'year', value: 'Year', id: 'year-field'}
+				%td
+					%input{ type: 'hidden', name: 'timezone', value: '0', id: 'timezone-field'}
 
 		%input{ type: 'submit', value: 'Create'}
