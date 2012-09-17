@@ -1,0 +1,37 @@
+td .time
+{
+	text-align: right;
+}
+
+#content
+{
+	width: 700px;
+	margin: auto;
+}
+
+.remainder
+{
+	margin: auto;
+}
+
+.remainder td
+{
+	padding: 5px 3px;
+}
+
+.remainder .time
+{
+	font-weight: bold;
+	text-align: right;
+}
+
+.header
+{
+	text-align: center;
+}
+
+body
+{
+	font-family: 'Helvetica', Arial, sans-serif;
+	font-size: 16px;
+}

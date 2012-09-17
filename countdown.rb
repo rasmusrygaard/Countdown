@@ -56,27 +56,3 @@ get '/api/countdown/:id' do
 		nil.to_json
 	end
 end
-
-get '/api/remaining/:id' do
-	begin
-		document = db[COLLECTION_NAME].find_one( _id: BSON::ObjectId(params[:id]))
-		days, hours, minutes, seconds = remainder(DateTime.parse(document['date']))
-		{ days: days, hours: hours, minutes: minutes, seconds: seconds }.to_json
-	rescue
-		nil.to_json
-	end
-end
-
-	# Return the days, hours, minutes, and seconds until the given time
-	def remainder(time)
-		seconds = ((time - DateTime.now) * SECONDS_PER_DAY).to_i
-		return 0, 0, 0, 0 if seconds < 0
-		# Do not mod yet to simplify calculations
-		minutes = seconds / SECONDS_PER_MINUTE
-		hours = minutes / MINUTES_PER_HOUR
-		days = hours / HOURS_PER_DAY
-		puts minutes
-		# Mod all values
-		return days, hours % HOURS_PER_DAY, minutes % MINUTES_PER_HOUR, seconds % SECONDS_PER_MINUTE
-	end
-
