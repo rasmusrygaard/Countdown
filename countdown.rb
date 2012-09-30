@@ -8,12 +8,13 @@ enable :sessions
 class Countdown < Sinatra::Base
 
   COLLECTION_NAME = 'countdowns'
-  DATABASE_NAME = 'db'
+  DATABASE_NAME = 'app8039027'
   SECONDS_PER_MINUTE = 60
   MINUTES_PER_HOUR = 60
   HOURS_PER_DAY = 24
   SECONDS_PER_DAY = SECONDS_PER_MINUTE * MINUTES_PER_HOUR * HOURS_PER_DAY
 
+MONGOHQ_URL
   db = Mongo::Connection.new.db(DATABASE_NAME, pool_size: 5, timeout: 5)
 
   get '/' do
