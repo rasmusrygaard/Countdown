@@ -1,9 +1,3 @@
-require 'rubygems'
-require 'sinatra'
-require 'mongo'
-require 'json'
-require 'sinatra/flash'
-
 enable :sessions
 
 COLLECTION_NAME = 'countdowns'
