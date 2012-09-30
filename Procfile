@@ -1,1 +1,1 @@
-web: bundle exec ruby countdown.rb -p $PORT
+web: ruby countdown.rb -p $PORT
