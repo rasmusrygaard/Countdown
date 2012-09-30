@@ -1,1 +1,2 @@
-run Sinatra::Application
+require 'countdown'
+run Countdown
