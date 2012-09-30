@@ -14,7 +14,6 @@ class Countdown < Sinatra::Base
   HOURS_PER_DAY = 24
   SECONDS_PER_DAY = SECONDS_PER_MINUTE * MINUTES_PER_HOUR * HOURS_PER_DAY
 
-MONGOHQ_URL
   db = Mongo::Connection.new.db(DATABASE_NAME, pool_size: 5, timeout: 5)
 
   get '/' do
