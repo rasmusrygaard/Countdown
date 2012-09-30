@@ -1,26 +1,32 @@
 %script{:type => "text/javascript",
-        :src  => "/Refresher.js"}
+	:src  => "/scripts/Refresher.js"}
+%script{:type => "text/javascript",
+	:src  => "/scripts/CountdownTimer.js"}
+%script{:type => "text/javascript",
+	:src  => "/scripts/Countdown.js"}
 - @time = @date.to_time.getlocal
-.header
-	%h1
-		Time until
-		#{Date::MONTHNAMES[@time.month]} 
-		#{@time.day} 
-		#{@time.year}, 
-		#{"%02d" % @time.hour}:#{"%02d" % @time.min}
 
-%p
-	- days, hours, minutes, seconds = remainder(@date)
-	%table.remainder
-		%tr
-			%td.time#days_left= days
-			%td	days
-		%tr
-			%td.time#hours_left= hours
-			%td hours
-		%tr
-			%td.time#minutes_left= minutes
-			%td minutes
-		%tr
-			%td.time#seconds_left= seconds
-			%td	seconds
+#countdown-div
+	.header
+		%h1
+			Time until
+			#{Date::MONTHNAMES[@time.month]} 
+			#{@time.day} 
+			#{@time.year}, 
+			#{"%02d" % @time.hour}:#{"%02d" % @time.min}
+
+	%p
+		- days, hours, minutes, seconds = remainder(@date)
+		%table.remainder
+			%tr
+				%td.time#days_left= days
+				%td	days
+			%tr
+				%td.time#hours_left= hours
+				%td hours
+			%tr
+				%td.time#minutes_left= minutes
+				%td minutes
+			%tr
+				%td.time#seconds_left= seconds
+				%td	seconds

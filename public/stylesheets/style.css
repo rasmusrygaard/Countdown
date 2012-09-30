@@ -1,0 +1,97 @@
+td .time
+{
+	text-align: right;
+}
+
+#content
+{
+	width: 700px;
+	margin: auto;
+}
+
+.remainder
+{
+	margin: auto;
+}
+
+.remainder td
+{
+	padding: 5px 3px;
+}
+
+#countdown-div
+{
+	background-color: red;
+	margin: 0;
+	border-radius: 0px 0px 20px 20px;
+	padding: 10px;
+	margin-top: 0;
+	width: 700px;
+	margin: auto;
+	box-shadow: 0px 3px #333;
+}
+
+.countdown-table, .countdown-table input
+{
+	text-align: center;
+	font-size: 40px;
+}
+
+.countdown-table td
+{
+	padding: 5px;
+}
+
+.countdown-table input
+{
+	height: 50px;
+	width: 50px;
+	border-radius: 10px;
+	padding-left: 0px;
+	
+}
+
+.default-field
+{
+	color: Gray;
+}
+
+.error
+{
+	color: red;
+	font-weight: bold;
+}
+
+#date-field
+{
+	width: 270px;
+}
+
+#description-field
+{
+	width: 100%;
+}
+
+.remainder .time
+{
+	font-weight: bold;
+	text-align: right;
+}
+
+.header
+{
+	text-align: center;
+}
+
+#content
+{
+	width: 100%;
+	height: 800px;
+}
+
+body
+{
+	font-family: 'Helvetica', Arial, sans-serif;
+	font-size: 16px;
+	margin: 0;
+}

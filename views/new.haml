@@ -1,23 +1,29 @@
-%script{:type => "text/javascript",
-        :src  => "/NewCountdown.js"}
+%script{:type => "text/javascript", :src  => "/scripts/NewCountdown.js"}
+%script{:type => "text/javascript", :src  => "/scripts/FormFormatter.js"}
 
-%h1
-	Create a new countown:
 
-.countdown_form
-	%form{ action: '/countdown', method: :post}
-		%table
+%h1 Create a new countown:
+
+- if (flash[:error])
+	%p.error= flash[:error]
+
+.input_form
+	%form{ action: '/countdown', method: :post, id: 'countdown-form'}
+		%table.countdown-table
 			%tr
+				%td 
+					%p At
 				%td
-					%input{ type: 'text', name: 'hour', value: 'Hour', id: 'hour-field'}
+					%input{ type: 'text', name: 'hour', value: '12', id: 'hour-field'} : 
+					%input{ type: 'text', name: 'minute', value: '51', id: 'minute-field'}
 				%td
-					%input{ type: 'text', name: 'minute', value: 'Minute', id: 'minute-field'}
+					%p on
 				%td
-					%input{ type: 'text', name: 'day', value: 'Day', id: 'day-field'}
-				%td
-					%input{ type: 'text', name: 'month', value: 'Month', id: 'month-field'}
-				%td
-					%input{ type: 'text', name: 'year', value: 'Year', id: 'year-field'}
+					%input{ type: 'text', name: 'date', value: '30/07/2013', id: 'date-field'}
+			%tr
+				%td{ colspan: 4}
+					%input{ type: 'text', name: 'description', value: 'Something happens...', id: 'description-field'}
+			%tr
 				%td
 					%input{ type: 'hidden', name: 'timezone', value: '0', id: 'timezone-field'}
 
