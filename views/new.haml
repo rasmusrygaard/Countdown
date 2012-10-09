@@ -4,9 +4,6 @@
 
 %h1 Create a new countown:
 
-- if (flash[:error])
-	%p.error= flash[:error]
-
 .input_form
 	%form{ action: '/countdown', method: :post, id: 'countdown-form'}
 		%table.countdown-table
