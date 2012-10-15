@@ -11,12 +11,12 @@
 				%td 
 					%p At
 				%td
-					%input{ type: 'text', name: 'hour', value: '12', id: 'hour-field'} : 
-					%input{ type: 'text', name: 'minute', value: '51', id: 'minute-field'}
+					%input{ type: 'text', name: 'hour', value: '12', maxlength: '2', id: 'hour-field'} : 
+					%input{ type: 'text', name: 'minute', value: '51', maxlength: '2', id: 'minute-field'}
 				%td
 					%p on
 				%td
-					%input{ type: 'text', name: 'date', value: '30/07/2013', id: 'date-field'}
+					%input{ type: 'text', name: 'date', value: '30/07/2013', maxlength: '10', id: 'date-field'}
 			%tr
 				%td{ colspan: 4}
 					%input{ type: 'text', name: 'description', value: 'Something happens...', id: 'description-field'}
@@ -24,4 +24,4 @@
 				%td
 					%input{ type: 'hidden', name: 'timezone', value: '0', id: 'timezone-field'}
 
-		%input{ type: 'submit', value: 'Create'}
+		%input{ type: 'submit', value: 'Create', id: 'submit'}
