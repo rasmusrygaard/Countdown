@@ -18,7 +18,7 @@ def get_connection
     db = URI.parse(ENV[MONGOHQ_URL])
     db_name = db.path.gsub(/^\//, '')
     @db_connection = Mongo::Connection.new(db.host, db.port).db(db_name)
-    @db_connection
+    @db_connection.authenticate(db.user. db.password)
   else
     @db_connection = Mongo::Connection.new.db(DATABASE_NAME, pool_size: 5, timeout: 5)
   end
@@ -68,7 +68,7 @@ post '/countdown' do
         -time_zone_offset_minutes * SECONDS_PER_MINUTE
       ).utc.to_json
     # Store the UTC date as a JSON string.
-    id = get_connection()[COLLECTION_NAME].insert( date: date.to_s, description: params[:description] )
+    id = get_connection[COLLECTION_NAME].insert( date: date.to_s, description: params[:description] )
     redirect "countdown/#{id}"
   end
 end
