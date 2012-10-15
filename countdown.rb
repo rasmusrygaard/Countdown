@@ -59,7 +59,7 @@ post '/countdown' do
     redirect :new
   else
     time_zone_offset_minutes = params[:timezone].to_i
-    date = Time.new(
+    time = Time.new(
         matches[:year].to_i,
         matches[:day].to_i,
         matches[:month].to_i,
@@ -68,8 +68,8 @@ post '/countdown' do
         0,
         -time_zone_offset_minutes * SECONDS_PER_MINUTE
       ).utc.to_json
-    # Store the UTC date as a JSON string.
-    id = get_connection()[COLLECTION_NAME].insert( date: date.to_s, event: params[:description] )
+    # Store the UTC time as a JSON string.
+    id = get_connection()[COLLECTION_NAME].insert( time: time.to_s, event: params[:description] )
     redirect "countdown/#{id}"
   end
 end
@@ -77,7 +77,7 @@ end
 # Look up the given countdown in the database and return its serialized version
 get '/countdown/:id' do
   doc = get_connection()[COLLECTION_NAME].find_one( _id: BSON::ObjectId(params[:id]))
-  @date = Time.parse(doc['date'])
+  @time = Time.parse(doc['time'])
   @event = doc['event']
   haml :show
 end
@@ -86,7 +86,7 @@ end
 get '/api/countdown/:id' do
   begin
     document = get_connection()[COLLECTION_NAME].find_one( _id: BSON::ObjectId(params[:id]))
-    document['date'].to_json
+    document['time'].to_json
   rescue
     nil.to_json
   end
