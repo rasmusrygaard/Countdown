@@ -45,11 +45,13 @@ post '/countdown' do
   end
   timeMatch = /\d\d?/
   hour = timeMatch.match(params[:hour])
+  puts "hour: #{hour}"
   if hour.nil? || hour[0].to_i >= 24
     setError('hour', params[:hour]) 
     validCountdown = false
   end
   minute = timeMatch.match(params[:minute])
+  puts "minute: #{minute}"
   if minute.nil? || minute[0].to_i >= 60
     setError('minute', params[:minute]) 
     validCountdown = false
