@@ -1,12 +1,15 @@
-td .time
-{
-	text-align: right;
-}
-
 #content
 {
-	width: 700px;
+	width: 600px;
 	margin: auto;
+	border: 1px solid black;
+	border-radius: 10px;
+	margin-top: 100px;
+	padding: 5px 10px;
+	text-align: center;
+	box-shadow: 0px -2px #333, 0px -3px #222, 0px 3px lightgray;
+	text-shadow: 0px -3px #111, 0px -2px #222;
+	background-image: url("/images/low_contrast_linen.png");
 }
 
 .remainder
@@ -14,41 +17,47 @@ td .time
 	margin: auto;
 }
 
+td .time
+{
+	text-align: right;
+}
+
 .remainder td
 {
 	padding: 5px 3px;
+	width: 60px;
+	text-align: left;
+	vertical-align: bottom;
 }
 
 #countdown-div
 {
-	background-color: red;
 	margin: 0;
-	border-radius: 0px 0px 20px 20px;
 	padding: 10px;
 	margin-top: 0;
-	width: 700px;
 	margin: auto;
-	box-shadow: 0px 3px #333;
 }
 
 .countdown-table, .countdown-table input
 {
 	text-align: center;
 	font-size: 40px;
+	margin: auto;
 }
 
 .countdown-table td
 {
 	padding: 5px;
+
 }
 
 .countdown-table input
 {
-	height: 50px;
-	width: 50px;
+	height: 40px;
+	width: 40px;
 	border-radius: 10px;
-	padding-left: 0px;
-	
+	padding-bottom: 10px;
+	font-family: 'Buenard', serif;
 }
 
 .default-field
@@ -78,20 +87,28 @@ td .time
 	text-align: right;
 }
 
+.time
+{
+	font-size: 25px;
+}
+
 .header
 {
 	text-align: center;
 }
 
-#content
+#submit
 {
-	width: 100%;
-	height: 800px;
+	font-size: 20px;
+	font-family: 'Buenard', serif;
 }
 
 body
 {
-	font-family: 'Helvetica', Arial, sans-serif;
-	font-size: 16px;
+	font-family: 'Buenard', serif;
+	font-size: 20px;
 	margin: 0;
+	text-align: center;
+	background-image: url("/images/paven.png");
+	color: #CCC;
 }
