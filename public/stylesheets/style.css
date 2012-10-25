@@ -1,114 +1,74 @@
-#content
-{
-	width: 600px;
-	margin: auto;
-	border: 1px solid black;
-	border-radius: 10px;
-	margin-top: 100px;
-	padding: 5px 10px;
-	text-align: center;
-	box-shadow: 0px -2px #333, 0px -3px #222, 0px 3px lightgray;
-	text-shadow: 0px -3px #111, 0px -2px #222;
-	background-image: url("/images/low_contrast_linen.png");
+#content {
+    width: 400px;
+    margin: auto;
+    border-radius: 0px 0px 15px 15px;
+    text-align: center;
+    box-shadow: 0px 2px rgba(0,0,0,0.4) inset, 0px 1px rgba(0,0,0,0.6) inset, 0px -2px rgba(256,256,256,0.3) inset;
+    text-shadow: 0px -2px rgba(0,0,0,0.6);
+    background-image: url("/images/low_contrast_linen.png");
 }
 
-.remainder
-{
-	margin: auto;
+.remainder td {
+    text-align: left;
+    display: inline-block;
+    vertical-align: bottom;
+}
+.remainder .time {
+    font-weight: bold;
+    text-align: right;
+    width: 21px;
+    padding: 0px 5px 0px 9px;
+}
+.time { font-size: 25px }
+
+#countdown-div {
+    margin: 0;
+    padding: 10px;
+    margin-top: 0;
+    margin: auto;
 }
 
-td .time
-{
-	text-align: right;
+.countdown-table,
+.countdown-table input {
+    text-align: center;
+    font-size: 40px;
+    margin: auto;
+}
+.countdown-table td { padding: 5px }
+.countdown-table input {
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    font-family: 'Buenard', serif;
 }
 
-.remainder td
-{
-	padding: 5px 3px;
-	width: 60px;
-	text-align: left;
-	vertical-align: bottom;
+.default-field { color: Gray }
+.error {
+    color: red;
+    font-weight: bold;
 }
 
-#countdown-div
-{
-	margin: 0;
-	padding: 10px;
-	margin-top: 0;
-	margin: auto;
+#date-field { width: 270px }
+#description-field { width: 100% }
+
+.header { text-align: center }
+#submit {
+    font-size: 20px;
+    font-family: 'Buenard', serif;
 }
-
-.countdown-table, .countdown-table input
-{
-	text-align: center;
-	font-size: 40px;
-	margin: auto;
-}
-
-.countdown-table td
-{
-	padding: 5px;
-
-}
-
-.countdown-table input
-{
-	height: 40px;
-	width: 40px;
-	border-radius: 10px;
-	padding-bottom: 10px;
-	font-family: 'Buenard', serif;
-}
-
-.default-field
-{
-	color: Gray;
-}
-
-.error
-{
-	color: red;
-	font-weight: bold;
-}
-
-#date-field
-{
-	width: 270px;
-}
-
-#description-field
-{
-	width: 100%;
-}
-
-.remainder .time
-{
-	font-weight: bold;
-	text-align: right;
-}
-
-.time
-{
-	font-size: 25px;
-}
-
-.header
-{
-	text-align: center;
-}
-
-#submit
-{
-	font-size: 20px;
-	font-family: 'Buenard', serif;
-}
-
-body
-{
-	font-family: 'Buenard', serif;
-	font-size: 20px;
-	margin: 0;
-	text-align: center;
-	background-image: url("/images/paven.png");
-	color: #CCC;
+#days_left { color: #E61717 }
+#hours_left { color: #E67617 }
+#minutes_left { color: #0F858B }
+#seconds_left { color: #00AF00 }
+h1 { color: #20A8AE }
+body {
+    font-family: 'Buenard', serif;
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+    background-position: top, center;
+    background-repeat: no-repeat, repeat;
+    background-image: url("https://sphotos-b.xx.fbcdn.net/hphotos-ash4/336789_10150335829655927_1643155981_o.jpg"), url("/images/paven.png");
+    color: #CCC;
 }
