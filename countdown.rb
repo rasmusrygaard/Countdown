@@ -43,9 +43,8 @@ post '/countdown' do
   if c.valid?
     time = c.to_time
     redirect :new if time < Time.new
-    puts "creating!"
     # Store the UTC time as a JSON string.
-    id = get_connection()[COLLECTION_NAME].insert( time: time.utc.to_json.to_s, event: c.description )
+    id = get_connection()[COLLECTION_NAME].insert( time: time.utc.to_i, event: c.description )
     redirect "countdown/#{id}"
   else 
     redirect :new
@@ -55,12 +54,12 @@ end
 # Look up the given countdown in the database and return its serialized version
 get '/countdown/:id' do
   doc = get_connection()[COLLECTION_NAME].find_one( _id: BSON::ObjectId(params[:id]))
-  @time = Time.parse(doc['time'])
+  @time = Time.at(doc['time'])
   @event = doc['event']
   haml :show
 end
 
-# Look up the given countdown in the database and return its serialized version
+# Look up the given countdown in the database and return its serialized version as an integer
 get '/api/countdown/:id' do
   begin
     document = get_connection()[COLLECTION_NAME].find_one( _id: BSON::ObjectId(params[:id]))
@@ -96,7 +95,7 @@ class CountdownTarget
   def to_time
     Time.new(@year, @month, @day, @hour, @minute, 0, @time_zone_offset_minutes *  - SECONDS_PER_MINUTE)
   end
-  
+
   private
   # Returns a YYYY, MM, DD from a string of format "MM/DD/YYY"
   def parseDate(date_string)

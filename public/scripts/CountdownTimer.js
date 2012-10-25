@@ -9,15 +9,14 @@ function CountdownTimer(apiUrl, updateFunction, stopFunction, errorFunction) {
 	this.updateCallback = updateFunction;
 	this.stopCallback = stopFunction;
 	this.errorCallback = errorFunction;
-	//  + countdownId
 	var obj = this;
 	$.ajax({
 		url: apiUrl,
 		success: function(data, textStatus, jqXHR) {
-
-			var endDate = new Date(JSON.parse(data));
+			var dateInSeconds = JSON.parse(data) * 1000
+			var endDate = new Date(dateInSeconds);
 			obj.intervalToken
-			obj.startFiringCallbacks(JSON.parse(data))
+			obj.startFiringCallbacks(dateInSeconds)
 		},
 		error: function() {
 			alert('error')
@@ -31,8 +30,8 @@ function CountdownTimer(apiUrl, updateFunction, stopFunction, errorFunction) {
 // Parameters:
 // 	data: A JSON string parseable as a Date object.
 
-CountdownTimer.prototype.startFiringCallbacks = function(data) {
-	var endDate = new Date(JSON.parse(data));
+CountdownTimer.prototype.startFiringCallbacks = function(dateInSeconds) {
+	var endDate = new Date(dateInSeconds);
 	var now = new Date();
 	var intervalToken = null;
 	// If the timer has not fired, and we have an update function to call.
