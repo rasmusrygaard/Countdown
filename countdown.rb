@@ -96,15 +96,7 @@ class CountdownTarget
   def to_time
     Time.new(@year, @month, @day, @hour, @minute, 0, @time_zone_offset_minutes *  - SECONDS_PER_MINUTE)
   end
-
-  def description
-    @description
-  end
-
-  def persisted?
-    false
-  end
-
+  
   private
   # Returns a YYYY, MM, DD from a string of format "MM/DD/YYY"
   def parseDate(date_string)
