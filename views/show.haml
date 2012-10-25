@@ -5,23 +5,24 @@
 %script{:type => "text/javascript",
 	:src  => "/scripts/Countdown.js"}
 
-#countdown-div
-	.header
-		%h1="#{@event}"
-		
-		%p in
+#content
+	#countdown-div
+		.header
+			%h1="#{@event}"
 			
+			%p in
+				
 
-	%p
-		%table.remainder
-			%tr
-				%td.time#days_left= 0
-				%td	days
-				%td.time#hours_left= 0
-				%td hours
-				%td.time#minutes_left= 0
-				%td minutes
-				%td.time#seconds_left= 0
-				%td	seconds
+		%p
+			%table.remainder
+				%tr
+					%td.time#days_left= 0
+					%td	days
+					%td.time#hours_left= 0
+					%td hours
+					%td.time#minutes_left= 0
+					%td minutes
+					%td.time#seconds_left= 0
+					%td	seconds
 
-	
+		
