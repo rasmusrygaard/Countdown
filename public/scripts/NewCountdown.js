@@ -12,6 +12,7 @@ $(document).ready(function () {
 		onClose: function(dateText, inst) {
 			if (dateText === "") 
 				formatter.valueCleared('date-field');
-		}
+		},
+		minDate: 0
 	});
 })
